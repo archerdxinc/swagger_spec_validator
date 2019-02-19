@@ -1360,6 +1360,12 @@
                 "minimum": {
                     "$ref": "custom_json_schema.json#/properties/minimum"
                 },
+                "listSubtype": {
+                    "$ref": "custom_json_schema.json#/properties/listSubtype"
+                },
+                "systemDefault": {
+                    "$ref": "custom_json_schema.json#/properties/systemDefault"
+                },
                 "multipleOf": {
                     "$ref": "custom_json_schema.json#/properties/multipleOf"
                 },

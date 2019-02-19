@@ -16,7 +16,8 @@
             "allOf": [ { "$ref": "#/definitions/positiveInteger" }, { "default": 0 } ]
         },
         "simpleTypes": {
-            "enum": [ "array", "boolean", "integer", "null", "number", "object", "string", "nan-number", "inf-number", "nan-inf-number" ]
+            "enum": [ "array", "boolean", "integer", "null", "number", "object", "string", "nan-number", 
+                      "inf-number", "nan-inf-number", "csv-list", "boolean-integer" ]
         },
         "stringArray": {
             "type": "array",
@@ -58,6 +59,10 @@
         "exclusiveMinimum": {
             "type": "boolean",
             "default": false
+        },
+        "listSubtype": {
+            "type": "string",
+            "enum": ["integer", "number", "string"]
         },
         "maxLength": { "$ref": "#/definitions/positiveInteger" },
         "minLength": { "$ref": "#/definitions/positiveIntegerDefault0" },
