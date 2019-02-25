@@ -31,6 +31,7 @@ from swagger_spec_validator.ref_validators import validate_schema_value
 
 log = logging.getLogger(__name__)
 
+CUSTOM_TYPES = ["nan-number", "inf-number", "nan-inf-number", "csv-list", "boolean-integer"]
 
 def validate_ref(ref_dict, path):
     """Check if a ref_dict has siblings that will be overwritten by $ref or $ref is None.
@@ -435,7 +436,9 @@ def validate_property_default(property_spec, deref):
         if deref_property_spec['default'] is None and deref_property_spec.get('x-nullable', False) is True:
             # In case x-nullable property is set to true, null is a valid default
             return
-
+        
+        if deref_property_spec['type']  in CUSTOM_TYPES:
+            return
         validate_value_type(schema=property_spec, value=deref_property_spec['default'], deref=deref)
 
 

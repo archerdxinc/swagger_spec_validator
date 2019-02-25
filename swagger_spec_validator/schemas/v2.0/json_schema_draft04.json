@@ -1,7 +1,7 @@
 {
-    "id": "custom_job_schema.json#",
-    "$schema": "custom_job_schema.json#",
-    "description": "Custom schema meta-schema that allows for additional simple types",
+    "id": "json_schema_draft04.json#",
+    "$schema": "json_schema_draft04.json#",
+    "description": "Core schema meta-schema",
     "definitions": {
         "schemaArray": {
             "type": "array",
@@ -16,7 +16,7 @@
             "allOf": [ { "$ref": "#/definitions/positiveInteger" }, { "default": 0 } ]
         },
         "simpleTypes": {
-            "enum": [ "array", "boolean", "integer", "null", "number", "object", "string", "nan-number", "inf-number", "nan-inf-number" ]
+            "enum": [ "array", "boolean", "integer", "null", "number", "object", "string" ]
         },
         "stringArray": {
             "type": "array",
